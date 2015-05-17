@@ -1,0 +1,113 @@
+<h1>Progress</h1>
+
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+    new Highcharts.Chart({
+        chart: {
+            renderTo: "users_chart"
+        },
+        title: {
+            text: "Users Progress"
+        },
+        xAxis: {
+            title: {
+                text: "Home Work"
+            }
+        },
+        series: [{
+            data: <%= @users.map {|u| u.HW_Avg}.inspect %>
+        }],
+        yAxis: {
+            title: {
+                text: "Users"
+            }
+        },
+        tooltip: {
+          formatter: function() {
+              return Highcharts.arrayMax(this.x) + ": " + Highcharts.numberFormat(this.y, 4);
+          }
+        },
+        data: <%= @users.map {|u| u.User }.inspect.html_safe %>
+    });
+  });
+</script>
+<div id="users_chart" style="width: 600px; height: 500px;"></div>
+
+<p>Download</p>
+  <%= link_to "CSV", users_path(format: "csv")%>
+
+<table id="progress">
+  <tr>
+    <th>ID</th>
+    <th>User</th>
+    <th>HW 01</th>
+    <th>HW 02</th>
+    <th>HW 03</th>
+    <th>HW 04</th>
+    <th>HW 05</th>
+    <th>HW 06</th>
+    <th>HW 07</th>
+    <th>HW 08</th>
+    <th>HW 09</th>
+    <th>HW 10</th>
+    <th>HW 11</th>
+    <th>HW 12</th>
+    <th>HW Avg</th>
+    <th>Lab 01</th>
+    <th>Lab 02</th>
+    <th>Lab 03</th>
+    <th>Lab 04</th>
+    <th>Lab 05</th>
+    <th>Lab 06</th>
+    <th>Lab 07</th>
+    <th>Lab 08</th>
+    <th>Lab 09</th>
+    <th>Lab 10</th>
+    <th>Lab 11</th>
+    <th>Lab 12</th>
+    <th>Lab Avg</th>
+    <th>Midterm</th>
+    <th>Final</th>
+  </tr>
+  <% @users.each do |user| %>
+  <tr>
+    <td><%= user.ID %></td>
+    <td><%= user.User %></td>
+    <td><%= user.HW_01 %></td>
+    <td><%= user.HW_02 %></td>
+    <td><%= user.HW_03 %></td>
+    <td><%= user.HW_04 %></td>
+    <td><%= user.HW_05 %></td>
+    <td><%= user.HW_06 %></td>
+    <td><%= user.HW_07 %></td>
+    <td><%= user.HW_08 %></td>
+    <td><%= user.HW_09 %></td>
+    <td><%= user.HW_10 %></td>
+    <td><%= user.HW_11 %></td>
+    <td><%= user.HW_12 %></td>
+    <td><%= user.HW_Avg %></td>
+    <td><%= user.Lab_01 %></td>
+    <td><%= user.Lab_02 %></td>
+    <td><%= user.Lab_03 %></td>
+    <td><%= user.Lab_04 %></td>
+    <td><%= user.Lab_05 %></td>
+    <td><%= user.Lab_06 %></td>
+    <td><%= user.Lab_07 %></td>
+    <td><%= user.Lab_08 %></td>
+    <td><%= user.Lab_09 %></td>
+    <td><%= user.Lab_10 %></td>
+    <td><%= user.Lab_11 %></td>
+    <td><%= user.Lab_12 %></td>
+    <td><%= user.Lab_Avg %></td>
+    <td><%= user.Midterm %></td>
+    <td><%= user.Final %></td>
+  </tr>
+  <% end %>
+</table>
+
+<h2>Import Progress</h2>
+
+<%= form_tag import_users_path, multipart: true do %>
+  <%= file_field_tag :file %>
+<%= submit_tag "Import" %>
+<% end %>

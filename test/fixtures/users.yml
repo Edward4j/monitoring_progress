@@ -1,0 +1,63 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  name: MyString
+  hw_01: 1.5
+  hw_02: 1.5
+  hw_03: 1.5
+  hw_04: 1.5
+  hw_05: 1.5
+  hw_06: 1.5
+  hw_07: 1.5
+  hw_08: 1.5
+  hw_09: 
+  hw_11: 1.5
+  hw_12: 1.5
+  hw_avg: 1.5
+  lab_01: 1.5
+  lab_02: 1.5
+  lab_03: 1.5
+  lab_04: 1.5
+  lab_05: 1.5
+  lab_06: 1.5
+  lab_07: 1.5
+  lab_08: 1.5
+  lab_09: 1.5
+  lab_10: 1.5
+  lab_11: 1.5
+  lab_12: 1.5
+  lab_avg: 1.5
+  midterm: 1.5
+  final: 1.5
+
+two:
+  id: 1
+  name: MyString
+  hw_01: 1.5
+  hw_02: 1.5
+  hw_03: 1.5
+  hw_04: 1.5
+  hw_05: 1.5
+  hw_06: 1.5
+  hw_07: 1.5
+  hw_08: 1.5
+  hw_09: 
+  hw_11: 1.5
+  hw_12: 1.5
+  hw_avg: 1.5
+  lab_01: 1.5
+  lab_02: 1.5
+  lab_03: 1.5
+  lab_04: 1.5
+  lab_05: 1.5
+  lab_06: 1.5
+  lab_07: 1.5
+  lab_08: 1.5
+  lab_09: 1.5
+  lab_10: 1.5
+  lab_11: 1.5
+  lab_12: 1.5
+  lab_avg: 1.5
+  midterm: 1.5
+  final: 1.5
